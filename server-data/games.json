@@ -1,0 +1,32 @@
+
+// create list of games which is used to store games
+
+{
+    "games": [
+        {
+            "gid": 1,
+            "gameName": "Shooting",
+            "gameprice": 105
+        },
+        {
+            "gid": 2,
+            "gameName": "Angry Birds",
+            "gameprice": 95
+        },
+        {
+            "gid": 3,
+            "gameName": "Temple Run",
+            "gameprice": 200
+        },
+        {
+            "gid": 4,
+            "gameName": "Bike Race",
+            "gameprice": 90
+        },
+        {
+            "gid": 5,
+            "gameName": "Air Control",
+            "gameprice": 800
+        }
+    ]
+}

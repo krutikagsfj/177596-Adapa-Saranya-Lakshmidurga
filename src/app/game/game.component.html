@@ -1,0 +1,90 @@
+<!-- in this we have to create game login form using reactive forms after that perform validations 
+  using validators in forms module
+ -->
+ <h1>Welcome To Capgemini : {{id}}</h1>
+<hr />
+
+<hr />
+<br>
+      
+<ul><h1>Welcome To GameCity  :  Experience the Online Gaming Experience  </h1></ul>
+
+
+<!-- creating   game form -->
+
+<form [formGroup]="gameForm" (ngSubmit)="onSubmit()">
+
+
+
+  <table>
+
+    <tr>
+
+      <td>Name:</td>
+
+      <div class="form-group">
+        <!-- entering text and perform validation -->
+
+        <td>
+          <input type="text" class="form-control" formControlName="Name" pattern="[a-zA-Z]*" placeholder="Enter Name">
+
+          <div *ngIf="submitted &&gameForm.controls.name.errors" class="error">
+
+            <div class="text-danger" *ngIf="gameForm.controls.name.errors.required">name should be entered</div>
+
+            <div class="text-danger" *ngIf="gameForm.controls.name.errors.pattern">enter name correctly</div>
+
+
+
+          </div>
+
+
+
+        </td>
+
+      </div>
+
+    </tr>
+
+    <tr>
+
+      <td>Address:</td>
+       <!-- entering text and perform validation  for address-->
+      <div class="form-group">
+
+        <td>
+          <input type="text" class="form-control" formControlName="address" placeholder="Enter Address">
+
+          <div *ngIf="submitted &&gameForm.controls.address.errors" class="error">
+
+            <div class="text-danger" *ngIf="gameForm.controls.address.errors.required">address should be required</div>
+
+          </div>
+
+
+
+        </td>
+
+      </div>
+
+    </tr>
+
+    <tr>
+    <!-- entering text and perform validation for amount that is amount in numbers -->
+      <td>Amount To Pay:</td>
+
+      <div class="form-group">
+
+        <td>
+          <input type="number" class="form-control" [formControl]="amount" placeholder="Enter Amount to play">
+</td>
+
+      </div>
+      <button class='btn btn-info' (click)="getAmount()"  [routerLink]="['/play']">Buy Card</button>
+
+
+    </tr>
+
+
+
+  </table>
